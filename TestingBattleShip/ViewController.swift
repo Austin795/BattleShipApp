@@ -9,14 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-
     @IBOutlet weak var collectionViewA: UICollectionView!
-    
     @IBOutlet weak var collectionViewB: UICollectionView!
-    
-    //let collectionViewA = UICollectionView()
-    //let collectionViewB = UICollectionView()
+
     let collectionViewAIdentifier = "CollectionViewACell"
     let collectionViewBIdentifier = "CollectionViewBCell"
     
@@ -72,24 +67,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let selectedCell: UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         
+        let cellAtInt = BattleShip.battleMapP2.getCellAt(BattleMapAt: indexPath.item)
+        
+        let result = BattleShip.battleMapP2.checkIfHitOrMiss(Cell: cellAtInt)
+        
         if collectionView == self.collectionViewA {
+            if result {
+                selectedCell.contentView.backgroundColor = UIColor.white
+ 
+            } else {
+                selectedCell.contentView.backgroundColor = UIColor.red
+            }
             
             print(indexPath.item)
-            
-            selectedCell.contentView.backgroundColor = UIColor.white
-            
-            
             
         } else {
-            print(indexPath.item)
-            selectedCell.contentView.backgroundColor = UIColor.red
+            if result {
+                selectedCell.contentView.backgroundColor = UIColor.white
+                
+            } else {
+                selectedCell.contentView.backgroundColor = UIColor.red
+            }
             
+            print(indexPath.item)
         }
+      
     }
-    
-    
-    
-
 
 }
-

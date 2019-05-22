@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct BattleShipCell1 {
+struct BattleShipCell {
     
     //stored Properties
     var Ship: Bool = false
@@ -29,15 +29,35 @@ struct BattleShipCell1 {
 class BattleShip {
     
     
-    var battleMapP1: [BattleShipCell1] = []
+    var battleMapP1: [BattleShipCell] = []
     static let battleMapP2: BattleShip = BattleShip(buildMap: true)
     
     
     init(buildMap: Bool) {
         if buildMap {
-            battleMapP1 = [BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true),BattleShipCell1(Ship: true)]
+            battleMapP1 = [BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: true),BattleShipCell(Ship: false),BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: true)]
         }
     }
+    
+    
+    func checkIfHitOrMiss(Cell: BattleShipCell) -> Bool {
+        
+        if (Cell.Ship) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+    
+    func getCellAt(BattleMapAt: Int) -> BattleShipCell {
+        
+        return battleMapP1[BattleMapAt]
+        
+        
+    }
+    
+    
 }
     
     
