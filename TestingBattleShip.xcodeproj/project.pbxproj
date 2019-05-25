@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D9CE83302293879100B5D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE832F2293879100B5D38C /* AppDelegate.swift */; };
-		D9CE83322293879100B5D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE83312293879100B5D38C /* ViewController.swift */; };
+		D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE83312293879100B5D38C /* PlayerOneViewController.swift */; };
 		D9CE83352293879100B5D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CE83332293879100B5D38C /* Main.storyboard */; };
 		D9CE83372293879400B5D38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CE83362293879400B5D38C /* Assets.xcassets */; };
 		D9CE833A2293879400B5D38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CE83382293879400B5D38C /* LaunchScreen.storyboard */; };
 		D9CE834222949D5F00B5D38C /* BattleShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE834122949D5F00B5D38C /* BattleShip.swift */; };
+		D9CE83462295B03C00B5D38C /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE83452295B03C00B5D38C /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9CE832C2293879100B5D38C /* TestingBattleShip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingBattleShip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CE832F2293879100B5D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9CE83312293879100B5D38C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D9CE83312293879100B5D38C /* PlayerOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOneViewController.swift; sourceTree = "<group>"; };
 		D9CE83342293879100B5D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9CE83362293879400B5D38C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9CE83392293879400B5D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9CE833B2293879400B5D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9CE834122949D5F00B5D38C /* BattleShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleShip.swift; sourceTree = "<group>"; };
+		D9CE83452295B03C00B5D38C /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				D9CE832F2293879100B5D38C /* AppDelegate.swift */,
 				D9CE834122949D5F00B5D38C /* BattleShip.swift */,
-				D9CE83312293879100B5D38C /* ViewController.swift */,
+				D9CE83452295B03C00B5D38C /* MainMenuViewController.swift */,
+				D9CE83312293879100B5D38C /* PlayerOneViewController.swift */,
 				D9CE83332293879100B5D38C /* Main.storyboard */,
 				D9CE83362293879400B5D38C /* Assets.xcassets */,
 				D9CE83382293879400B5D38C /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CE83462295B03C00B5D38C /* MainMenuViewController.swift in Sources */,
 				D9CE834222949D5F00B5D38C /* BattleShip.swift in Sources */,
-				D9CE83322293879100B5D38C /* ViewController.swift in Sources */,
+				D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */,
 				D9CE83302293879100B5D38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

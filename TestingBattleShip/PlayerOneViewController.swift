@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionViewA: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
 
@@ -39,6 +39,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionViewA {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as UICollectionViewCell
+            
+            let cellAtInt = BattleShip.battleMapP2.getCellAt(BattleMapAt: indexPath.item)
+            
+            let result = BattleShip.battleMapP2.checkIfHitOrMiss(Cell: cellAtInt)
+            
+            
+            
+            if ( result ) {
+                cellA.backgroundColor = UIColor.red
+            }
+            
             
             // Set up cell
             return cellA
@@ -73,20 +84,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         if collectionView == self.collectionViewA {
             if result {
-                selectedCell.contentView.backgroundColor = UIColor.white
+                selectedCell.contentView.backgroundColor = UIColor.red
  
             } else {
-                selectedCell.contentView.backgroundColor = UIColor.red
+                selectedCell.contentView.backgroundColor = UIColor.white
             }
             
             print(indexPath.item)
             
         } else {
             if result {
-                selectedCell.contentView.backgroundColor = UIColor.white
+                selectedCell.contentView.backgroundColor = UIColor.red
                 
             } else {
-                selectedCell.contentView.backgroundColor = UIColor.red
+                selectedCell.contentView.backgroundColor = UIColor.white
             }
             
             print(indexPath.item)

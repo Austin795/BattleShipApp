@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UKv-iD-HdW">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Player One View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayerOneViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6f-Io-aqa">
-                                <rect key="frame" x="20" y="164" width="250" height="230"/>
+                                <rect key="frame" x="20" y="164" width="270" height="230"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="Ztp-lZ-sJq"/>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="13g-to-BDt">
-                                <rect key="frame" x="20" y="471" width="250" height="230"/>
+                                <rect key="frame" x="20" y="471" width="270" height="230"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MNs-SK-PYm">
@@ -99,7 +99,7 @@
                             <constraint firstItem="2qp-d0-NV8" firstAttribute="top" secondItem="G6f-Io-aqa" secondAttribute="bottom" constant="44" id="G39-QE-GjU"/>
                             <constraint firstItem="G6f-Io-aqa" firstAttribute="leading" secondItem="2qp-d0-NV8" secondAttribute="leading" id="KpF-fg-Whd"/>
                             <constraint firstItem="ZvT-Da-5aq" firstAttribute="leading" secondItem="G6f-Io-aqa" secondAttribute="leading" id="Mu6-TR-K13"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G6f-Io-aqa" secondAttribute="trailing" constant="144" id="Ne5-ef-JE4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G6f-Io-aqa" secondAttribute="trailing" constant="124" id="Ne5-ef-JE4"/>
                             <constraint firstItem="ZvT-Da-5aq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PyA-Je-v5r"/>
                             <constraint firstItem="Zmg-Uj-Pae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="U1p-AL-o5R"/>
                             <constraint firstItem="2qp-d0-NV8" firstAttribute="leading" secondItem="13g-to-BDt" secondAttribute="leading" id="aEh-EU-TVs"/>
@@ -119,7 +119,169 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="26.116071428571427"/>
+            <point key="canvasLocation" x="-446" y="-417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dH2-SG-afD">
+            <objects>
+                <viewController id="Uht-8D-dc8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WS7-ES-5tc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BattleShip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k18-4Z-M4b">
+                                <rect key="frame" x="85" y="44" width="244" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="tgE-TC-f31"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How To Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-IB-dSp">
+                                <rect key="frame" x="86" y="137" width="242" height="37"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1. Player One selects Start Game  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ey1-CK-A5z">
+                                <rect key="frame" x="85" y="196" width="240" height="74"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="rTR-aq-HOG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="3. Player One Passes his device to Player 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-Yc-puD">
+                                <rect key="frame" x="85" y="384" width="240" height="82"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="sRP-Vl-TyT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="4. Player 2 selects their strike location on the strike map then passes the device back to Player 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GOH-AV-0Kq">
+                                <rect key="frame" x="85" y="470" width="240" height="166"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="2. Player One selects their strike  location on the strike map" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-ZM-1SS">
+                                <rect key="frame" x="87" y="278" width="240" height="98"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="ifl-2M-dhK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="5. Repeat 1 - 4 until Winner " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zxG-OB-Swz">
+                                <rect key="frame" x="85" y="644" width="240" height="74"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="eHk-mZ-Fzd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5uf-ZM-1SS" firstAttribute="top" secondItem="Ey1-CK-A5z" secondAttribute="bottom" constant="8" symbolic="YES" id="0vf-gN-fSC"/>
+                            <constraint firstItem="vpR-Yc-puD" firstAttribute="trailing" secondItem="GOH-AV-0Kq" secondAttribute="trailing" id="155-BE-c3G"/>
+                            <constraint firstItem="k18-4Z-M4b" firstAttribute="leading" secondItem="Ey1-CK-A5z" secondAttribute="leading" id="3gQ-0l-fP6"/>
+                            <constraint firstItem="k18-4Z-M4b" firstAttribute="leading" secondItem="Cub-i1-Iqb" secondAttribute="leading" constant="85" id="BdE-gf-5C7"/>
+                            <constraint firstItem="GOH-AV-0Kq" firstAttribute="leading" secondItem="zxG-OB-Swz" secondAttribute="leading" id="I7D-WO-hdI"/>
+                            <constraint firstItem="vpR-Yc-puD" firstAttribute="top" secondItem="5uf-ZM-1SS" secondAttribute="bottom" constant="8" symbolic="YES" id="Ja5-Gi-Tqo"/>
+                            <constraint firstItem="GOH-AV-0Kq" firstAttribute="top" secondItem="vpR-Yc-puD" secondAttribute="bottom" constant="4" id="RHy-7y-qus"/>
+                            <constraint firstItem="zxG-OB-Swz" firstAttribute="top" secondItem="GOH-AV-0Kq" secondAttribute="bottom" constant="8" symbolic="YES" id="RRx-0K-PgB"/>
+                            <constraint firstItem="Ey1-CK-A5z" firstAttribute="trailing" secondItem="vpR-Yc-puD" secondAttribute="trailing" id="SQ7-Jv-4eH"/>
+                            <constraint firstItem="vpR-Yc-puD" firstAttribute="leading" secondItem="GOH-AV-0Kq" secondAttribute="leading" id="Ud6-nu-YWU"/>
+                            <constraint firstItem="k18-4Z-M4b" firstAttribute="top" secondItem="Cub-i1-Iqb" secondAttribute="top" id="WfF-aZ-TBO"/>
+                            <constraint firstItem="Cub-i1-Iqb" firstAttribute="trailing" secondItem="Ey1-CK-A5z" secondAttribute="trailing" constant="89" id="XY8-iN-5Ig"/>
+                            <constraint firstItem="cUB-IB-dSp" firstAttribute="centerX" secondItem="5uf-ZM-1SS" secondAttribute="centerX" id="Y9S-tF-ccc"/>
+                            <constraint firstItem="cUB-IB-dSp" firstAttribute="top" secondItem="k18-4Z-M4b" secondAttribute="bottom" constant="40" id="YHP-VB-Rta"/>
+                            <constraint firstItem="GOH-AV-0Kq" firstAttribute="trailing" secondItem="zxG-OB-Swz" secondAttribute="trailing" id="Yfr-6M-3Au"/>
+                            <constraint firstItem="Ey1-CK-A5z" firstAttribute="leading" secondItem="vpR-Yc-puD" secondAttribute="leading" id="aE6-a6-Vnd"/>
+                            <constraint firstItem="Cub-i1-Iqb" firstAttribute="bottom" secondItem="zxG-OB-Swz" secondAttribute="bottom" constant="144" id="bbM-KV-lS2"/>
+                            <constraint firstItem="k18-4Z-M4b" firstAttribute="centerX" secondItem="WS7-ES-5tc" secondAttribute="centerX" id="cxt-6M-Yqe"/>
+                            <constraint firstItem="k18-4Z-M4b" firstAttribute="centerX" secondItem="cUB-IB-dSp" secondAttribute="centerX" id="qnV-9y-jVf"/>
+                            <constraint firstItem="cUB-IB-dSp" firstAttribute="leading" secondItem="Cub-i1-Iqb" secondAttribute="leading" constant="86" id="td3-19-iun"/>
+                            <constraint firstItem="5uf-ZM-1SS" firstAttribute="leading" secondItem="Cub-i1-Iqb" secondAttribute="leading" constant="87" id="xFh-xf-hyA"/>
+                            <constraint firstItem="Ey1-CK-A5z" firstAttribute="top" secondItem="cUB-IB-dSp" secondAttribute="bottom" constant="22" id="zMs-rL-ua5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cub-i1-Iqb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgu-DG-xaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-446.37681159420293" y="264.50892857142856"/>
+        </scene>
+        <!--MainMenuStart-->
+        <scene sceneID="80F-aU-9H8">
+            <objects>
+                <viewController storyboardIdentifier="MainMenuStart" title="MainMenuStart" id="UKv-iD-HdW" customClass="MainMenuViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eYI-dP-rSC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AU-5B-Ybn">
+                                <rect key="frame" x="77" y="201" width="261" height="134"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToGame:" destination="UKv-iD-HdW" eventType="touchUpInside" id="XfG-TP-r0f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uV-f1-afC">
+                                <rect key="frame" x="77" y="356" width="261" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <state key="normal" title="How To Play"/>
+                                <connections>
+                                    <action selector="howToPlay:" destination="UKv-iD-HdW" eventType="touchUpInside" id="vj9-xC-oXZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BattleShip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3G-Ce-MTE">
+                                <rect key="frame" x="85" y="44" width="244" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="2NY-Zb-9fY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1AU-5B-Ybn" firstAttribute="centerY" secondItem="eYI-dP-rSC" secondAttribute="centerY" constant="-180" id="1ZX-ht-lSb"/>
+                            <constraint firstItem="1AU-5B-Ybn" firstAttribute="leading" secondItem="Vez-77-XqB" secondAttribute="leading" constant="77" id="3qX-bX-dLJ"/>
+                            <constraint firstItem="M3G-Ce-MTE" firstAttribute="centerX" secondItem="eYI-dP-rSC" secondAttribute="centerX" id="HSL-C7-QSy"/>
+                            <constraint firstItem="Vez-77-XqB" firstAttribute="bottom" secondItem="1AU-5B-Ybn" secondAttribute="bottom" constant="527" id="Jom-em-zB6"/>
+                            <constraint firstItem="M3G-Ce-MTE" firstAttribute="centerX" secondItem="1AU-5B-Ybn" secondAttribute="centerX" id="N2n-TB-Bhi"/>
+                            <constraint firstItem="M3G-Ce-MTE" firstAttribute="top" secondItem="Vez-77-XqB" secondAttribute="top" id="btO-is-F1w"/>
+                            <constraint firstItem="M3G-Ce-MTE" firstAttribute="leading" secondItem="Vez-77-XqB" secondAttribute="leading" constant="85" id="yvI-Kk-I29"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vez-77-XqB"/>
+                    </view>
+                    <connections>
+                        <outlet property="goToGameButton" destination="1AU-5B-Ybn" id="DtA-g7-CoH"/>
+                        <outlet property="howToPlayButton" destination="8uV-f1-afC" id="hCJ-lm-ZQ9"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainMenuSegue" id="SPm-pK-WSK"/>
+                        <segue destination="Uht-8D-dc8" kind="presentation" identifier="howToPlaySegue" id="v9W-SX-Y9u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0a8-ic-yXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1372.4637681159422" y="-119.19642857142857"/>
         </scene>
     </scenes>
 </document>

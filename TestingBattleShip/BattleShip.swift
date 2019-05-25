@@ -26,19 +26,55 @@ struct BattleShipCell {
     }
 }
 
+struct ship {
+    var shipSize: Int = 0
+}
+
 class BattleShip {
     
     
     var battleMapP1: [BattleShipCell] = []
+    var battleMapP2: [BattleShipCell] = []
+    var boatArr: [ship] = []
+    
+    let landMine = ship(shipSize: 1)
+    let patrolBoat = ship(shipSize: 2)
+    let destoryerBoat = ship(shipSize: 3)
+    let submarineBoat = ship(shipSize: 3)
+    let battleshipBoat = ship(shipSize: 4)
+    let aircraftBoat = ship(shipSize: 5)
+    
+    static let battleMapP1: BattleShip = BattleShip(buildMap: true)
     static let battleMapP2: BattleShip = BattleShip(buildMap: true)
     
-    
     init(buildMap: Bool) {
+        
+        boatArr = [landMine, patrolBoat, destoryerBoat, submarineBoat, battleshipBoat, aircraftBoat]
+        
+        var boatSelector: Int = 0
+        var boatSelected: ship
+        
         if buildMap {
-            battleMapP1 = [BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: true),BattleShipCell(Ship: false),BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: false),BattleShipCell(Ship: true),BattleShipCell(Ship: true)]
+            var j:Int = 0
+            //battleMapP1.append(BattleShipCell(Ship: true))
+            for _ in 1...71 {
+                if (j == 9) {
+                    boatSelector = Int.random(in: 0...5)
+                    boatSelected = boatArr[boatSelector]
+                    if (boatSelector != 0) {
+                        for _ in 1...boatSelected.shipSize {
+                            battleMapP1.append(BattleShipCell(Ship: true))
+                        }
+                    }
+                        j = 0
+                } else {
+                    battleMapP1.append(BattleShipCell(Ship: false))
+                    j += 1
+                }
+
+            }
         }
     }
-    
     
     func checkIfHitOrMiss(Cell: BattleShipCell) -> Bool {
         
