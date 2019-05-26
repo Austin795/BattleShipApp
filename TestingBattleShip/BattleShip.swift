@@ -21,8 +21,6 @@ struct BattleShipCell {
         } else {
             return "Miss"
         }
-        
-        
     }
 }
 
@@ -32,7 +30,6 @@ struct ship {
 
 class BattleShip {
     
-    
     var battleMapP1: [BattleShipCell] = []
     var battleMapP2: [BattleShipCell] = []
     var boatArr: [ship] = []
@@ -40,7 +37,6 @@ class BattleShip {
     let landMine = ship(shipSize: 1)
     let patrolBoat = ship(shipSize: 2)
     let destoryerBoat = ship(shipSize: 3)
-    let submarineBoat = ship(shipSize: 3)
     let battleshipBoat = ship(shipSize: 4)
     let aircraftBoat = ship(shipSize: 5)
     
@@ -49,23 +45,56 @@ class BattleShip {
     
     init(buildMap: Bool) {
         
-        boatArr = [landMine, patrolBoat, destoryerBoat, submarineBoat, battleshipBoat, aircraftBoat]
+        boatArr = [patrolBoat, destoryerBoat, battleshipBoat, aircraftBoat]
         
         var boatSelector: Int = 0
         var boatSelected: ship
+        var timesThough: Int = 0
         
         if buildMap {
             var j:Int = 0
             //battleMapP1.append(BattleShipCell(Ship: true))
             for _ in 1...71 {
-                if (j == 9) {
-                    boatSelector = Int.random(in: 0...5)
+                
+                if (j == 9 && boatSelector < 4) {
+                    
                     boatSelected = boatArr[boatSelector]
-                    if (boatSelector != 0) {
+                    
+                    if (boatSelector == 0) {
+                        for _ in 1...patrolBoat.shipSize {
+                            battleMapP1.append(BattleShipCell(Ship: true))
+                        }
+                        boatSelector += 1
+                        timesThough += 1
+                    } else if (boatSelector == 1) {
+                        for _ in 1...destoryerBoat.shipSize {
+                            battleMapP1.append(BattleShipCell(Ship: true))
+                        }
+                        boatSelector += 1
+                        timesThough += 1
+                    } else if (boatSelector == 2) {
+                        for _ in 1...battleshipBoat.shipSize {
+                            battleMapP1.append(BattleShipCell(Ship: true))
+                        }
+                        boatSelector += 1
+                        timesThough += 1
+                    } else if (boatSelector == 3) {
+                        for _ in 0...battleshipBoat.shipSize {
+                            battleMapP1.append(BattleShipCell(Ship: true))
+                        }
+                        boatSelector += 1
+                        timesThough += 1
+                    } else {
+                        break;
+                    }
+                    
+                    
+                    
+                    /* if (boatSelector != 0) {
                         for _ in 1...boatSelected.shipSize {
                             battleMapP1.append(BattleShipCell(Ship: true))
                         }
-                    }
+                    } */
                         j = 0
                 } else {
                     battleMapP1.append(BattleShipCell(Ship: false))
