@@ -9,7 +9,9 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
+    
+    @IBOutlet weak var mainMenuTitle: UILabel!
+    
     @IBOutlet weak var goToGameButton: UIButton!
 
     @IBOutlet weak var howToPlayButton: UIButton!
@@ -23,8 +25,6 @@ class MainMenuViewController: UIViewController {
         self.performSegue(withIdentifier: "howToPlaySegue", sender: self)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,11 +36,19 @@ class MainMenuViewController: UIViewController {
         howToPlayButton.layer.borderWidth = 5
         howToPlayButton.layer.borderColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
         
+        mainMenuTitle.layer.backgroundColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
+        mainMenuTitle.layer.cornerRadius = 10
+        mainMenuTitle.layer.opacity = 0.8
         
+        //mainMenuTitle.layer.borderWidth = 2
+        //mainMenuTitle.layer.borderColor = UIColor.white.cgColor
         
+        //var oceanTexture = UIImageView(image: oceanBackgroundImage)
+        
+        // image.image = UIImage(named: "image")
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
+      
         // Do any additional setup after loading the view.
     }
-    
-    
-    
 }

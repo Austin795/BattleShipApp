@@ -11,9 +11,14 @@ import UIKit
 class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionViewA: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
-
+    
+    @IBOutlet weak var mainMenuBack: UIButton!
+    
+    @IBOutlet weak var player1Title: UILabel!
     let collectionViewAIdentifier = "CollectionViewACell"
     let collectionViewBIdentifier = "CollectionViewBCell"
+    
+    
     
     
     let items1 = BattleShip.battleMapP2
@@ -26,6 +31,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidLoad() {
         // Initialize the collection views, set the desired frames
+        
         collectionViewA.delegate = self
         collectionViewB.delegate = self
         
@@ -34,6 +40,16 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         
         self.view.addSubview(collectionViewA)
         self.view.addSubview(collectionViewB)
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
+        
+        player1Title.layer.backgroundColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
+        player1Title.layer.cornerRadius = 10
+        player1Title.layer.opacity = 0.8
+    }
+    
+    @IBAction func backToMenu(_ sender: Any) {
+        self.performSegue(withIdentifier: "player1ToMainMenu", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,6 +60,20 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             
             let result = BattleShip.battleMapP2.checkIfHitOrMiss(Cell: cellAtInt)
             
+            let oceanBackground: UIImage! = UIImage(named: "Image")
+            
+            //self.collectionViewA.frame = CGRect(x: 0, y: 0, width: cellA.frame.width, height: collectionViewA.frame.height)
+            
+        
+            
+            self.collectionViewA.layer.borderWidth = 1.0
+            self.collectionViewA.layer.borderColor = UIColor.black.cgColor
+            
+            //cellA.layer.borderWidth = 1.0
+            //cellA.layer.borderColor = UIColor.black.cgColor
+            
+            self.collectionViewA.backgroundColor = UIColor.darkGray
+            collectionViewA.layer.opacity = 0.8
             
             
             if ( result ) {
