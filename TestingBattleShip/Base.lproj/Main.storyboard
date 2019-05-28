@@ -57,13 +57,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Ship Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvT-Da-5aq">
                                 <rect key="frame" x="20" y="135" width="141" height="27"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strike Map:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-d0-NV8">
                                 <rect key="frame" x="20" y="434.5" width="106" height="27"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="13g-to-BDt">
@@ -93,13 +93,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDD-pv-jrl">
                                 <rect key="frame" x="173" y="100" width="68" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to strike a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8T-Gq-cGK">
                                 <rect key="frame" x="133" y="434.5" width="229" height="27"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGW-F9-2z3">
@@ -110,6 +110,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
                                 <state key="normal" title="End your Turn"/>
+                                <connections>
+                                    <action selector="toPassDevice1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lSo-xc-3A8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-v4-zvf">
                                 <rect key="frame" x="20" y="53" width="49" height="35"/>
@@ -157,14 +160,71 @@
                     <connections>
                         <outlet property="collectionViewA" destination="G6f-Io-aqa" id="rzz-Pp-GDH"/>
                         <outlet property="collectionViewB" destination="13g-to-BDt" id="Avu-yE-CFL"/>
+                        <outlet property="endYourTurnBut" destination="yGW-F9-2z3" id="XSh-Sf-pwf"/>
                         <outlet property="mainMenuBack" destination="Goc-v4-zvf" id="8e2-AA-1s9"/>
                         <outlet property="player1Title" destination="Zmg-Uj-Pae" id="fvf-iD-jwi"/>
+                        <outlet property="playerNumLabel" destination="ZDD-pv-jrl" id="Q64-er-U0D"/>
                         <segue destination="UKv-iD-HdW" kind="presentation" identifier="player1ToMainMenu" id="xA3-y9-bGK"/>
+                        <segue destination="J7s-40-TWp" kind="presentation" identifier="player1ToPassDevice" id="sV0-57-UsE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-446.37681159420293" y="-473.4375"/>
+        </scene>
+        <!--Pass Device View Controller-->
+        <scene sceneID="OXZ-qK-KfH">
+            <objects>
+                <viewController id="J7s-40-TWp" customClass="PassDeviceViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QKg-E1-Frl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7l-sw-CwG">
+                                <rect key="frame" x="94" y="226" width="227" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MY1-qX-96b">
+                                <rect key="frame" x="68" y="321" width="279" height="254"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="30"/>
+                                <state key="normal" title="Tap when ready"/>
+                                <connections>
+                                    <action selector="passToPlayer2:" destination="J7s-40-TWp" eventType="touchUpInside" id="ZJG-XD-V34"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pass device to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfm-yR-wbT">
+                                <rect key="frame" x="94" y="104" width="227" height="195"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MY1-qX-96b" firstAttribute="leading" secondItem="3dK-jo-9qy" secondAttribute="leading" constant="68" id="6ia-rs-cxl"/>
+                            <constraint firstItem="Mfm-yR-wbT" firstAttribute="centerX" secondItem="QKg-E1-Frl" secondAttribute="centerX" id="DdX-lc-Q1D"/>
+                            <constraint firstItem="Mfm-yR-wbT" firstAttribute="centerX" secondItem="MY1-qX-96b" secondAttribute="centerX" id="Zdt-zE-4X6"/>
+                            <constraint firstItem="3dK-jo-9qy" firstAttribute="bottom" secondItem="MY1-qX-96b" secondAttribute="bottom" constant="287" id="o7s-CO-uaX"/>
+                            <constraint firstItem="MY1-qX-96b" firstAttribute="centerY" secondItem="QKg-E1-Frl" secondAttribute="centerY" id="uF7-Wa-H7r"/>
+                            <constraint firstItem="Mfm-yR-wbT" firstAttribute="top" secondItem="3dK-jo-9qy" secondAttribute="top" constant="61" id="yIt-XE-EfT"/>
+                            <constraint firstItem="MY1-qX-96b" firstAttribute="top" secondItem="Mfm-yR-wbT" secondAttribute="bottom" constant="21" id="zCn-PA-5co"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3dK-jo-9qy"/>
+                    </view>
+                    <connections>
+                        <outlet property="passDeviceBut" destination="MY1-qX-96b" id="Vv4-gO-XQ9"/>
+                        <outlet property="passDeviceLabel1" destination="Mfm-yR-wbT" id="0iA-ny-FOo"/>
+                        <outlet property="passDeviceLabel2" destination="Q7l-sw-CwG" id="xjr-vw-5oR"/>
+                        <segue destination="byz-3z-lo5" kind="show" identifier="passDeviceToPlayer2" id="2di-AL-cx2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSj-xV-tjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.98550724637687" y="-473.4375"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dH2-SG-afD">
@@ -231,6 +291,17 @@
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beW-Hr-mmK">
+                                <rect key="frame" x="20" y="44" width="49" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwh-1I-KHu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -334,5 +405,223 @@
             </objects>
             <point key="canvasLocation" x="-1372.4637681159422" y="-119.19642857142857"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="sOj-aH-KKP">
+            <objects>
+                <viewController id="byz-3z-lo5" customClass="PlayerTwoViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qkt-5u-5fU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysi-sP-gnR">
+                                <rect key="frame" x="20" y="170" width="270" height="229.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9gK-O4-wIL">
+                                    <size key="itemSize" width="20" height="20"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewACell" id="zkM-Om-v5D">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="25" height="25"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="byz-3z-lo5" id="xds-fG-ZAs"/>
+                                    <outlet property="delegate" destination="byz-3z-lo5" id="Dpa-ac-JNY"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BattleShip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-Uz-HAD">
+                                <rect key="frame" x="85" y="44" width="244" height="53"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Ship Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAM-hI-NOu">
+                                <rect key="frame" x="20" y="135" width="141" height="27"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strike Map:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsb-za-afc">
+                                <rect key="frame" x="20" y="434.5" width="106" height="27"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XCl-FW-OgB">
+                                <rect key="frame" x="20" y="473.5" width="270" height="231.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DVE-uL-snh">
+                                    <size key="itemSize" width="20" height="20"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewBCell" id="1eL-pO-xrd">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="25" height="25"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ9-pd-mZM">
+                                <rect key="frame" x="172" y="100" width="70" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to strike a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0y-yb-q08">
+                                <rect key="frame" x="133" y="434.5" width="229" height="27"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6s-73-wgK">
+                                <rect key="frame" x="110" y="763" width="194" height="65"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="hLc-fX-4Kq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                <state key="normal" title="End your Turn"/>
+                                <connections>
+                                    <action selector="passDevice2:" destination="byz-3z-lo5" eventType="touchUpInside" id="0pf-ky-Pvu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eD-SD-rIq">
+                                <rect key="frame" x="20" y="53" width="49" height="35"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToMenu:" destination="byz-3z-lo5" eventType="touchUpInside" id="yFW-Aa-SNf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E6s-73-wgK" firstAttribute="leading" secondItem="GvW-FM-3co" secondAttribute="leading" constant="110" id="28h-BD-Sb3"/>
+                            <constraint firstItem="ysi-sP-gnR" firstAttribute="trailing" secondItem="XCl-FW-OgB" secondAttribute="trailing" id="7Y2-Qy-9z6"/>
+                            <constraint firstItem="2eD-SD-rIq" firstAttribute="centerY" secondItem="Weg-Uz-HAD" secondAttribute="centerY" id="Gjy-Kx-lHy"/>
+                            <constraint firstItem="Weg-Uz-HAD" firstAttribute="centerX" secondItem="qkt-5u-5fU" secondAttribute="centerX" id="Iuh-Sb-Pc0"/>
+                            <constraint firstItem="GvW-FM-3co" firstAttribute="trailing" secondItem="ysi-sP-gnR" secondAttribute="trailing" constant="124" id="JCJ-jY-3l9"/>
+                            <constraint firstItem="Weg-Uz-HAD" firstAttribute="centerX" secondItem="RZ9-pd-mZM" secondAttribute="centerX" id="Ngn-3u-RhD"/>
+                            <constraint firstItem="gAM-hI-NOu" firstAttribute="leading" secondItem="ysi-sP-gnR" secondAttribute="leading" id="OM9-t7-9ZC"/>
+                            <constraint firstItem="gAM-hI-NOu" firstAttribute="top" secondItem="Weg-Uz-HAD" secondAttribute="bottom" constant="38" id="RKI-u4-ndv"/>
+                            <constraint firstItem="2eD-SD-rIq" firstAttribute="leading" secondItem="gAM-hI-NOu" secondAttribute="leading" id="SqX-bf-aaf"/>
+                            <constraint firstItem="rsb-za-afc" firstAttribute="leading" secondItem="XCl-FW-OgB" secondAttribute="leading" id="TUZ-1O-92N"/>
+                            <constraint firstItem="rsb-za-afc" firstAttribute="centerY" secondItem="qkt-5u-5fU" secondAttribute="centerY" id="Wqf-go-0LT"/>
+                            <constraint firstItem="ysi-sP-gnR" firstAttribute="leading" secondItem="rsb-za-afc" secondAttribute="leading" id="YEn-ZN-KXT"/>
+                            <constraint firstItem="2eD-SD-rIq" firstAttribute="leading" secondItem="qkt-5u-5fU" secondAttribute="leadingMargin" id="YZK-AK-s7W"/>
+                            <constraint firstItem="GvW-FM-3co" firstAttribute="bottom" secondItem="E6s-73-wgK" secondAttribute="bottom" constant="34" id="b2Y-Yt-Fkz"/>
+                            <constraint firstItem="2eD-SD-rIq" firstAttribute="top" secondItem="GvW-FM-3co" secondAttribute="top" constant="9" id="b9j-tb-LZs"/>
+                            <constraint firstItem="XCl-FW-OgB" firstAttribute="top" secondItem="rsb-za-afc" secondAttribute="bottom" constant="12" id="cIp-rB-guU"/>
+                            <constraint firstItem="Weg-Uz-HAD" firstAttribute="top" secondItem="GvW-FM-3co" secondAttribute="top" id="cbO-O6-keo"/>
+                            <constraint firstItem="Weg-Uz-HAD" firstAttribute="leading" secondItem="2eD-SD-rIq" secondAttribute="trailing" constant="16" id="eb8-Ap-CB2"/>
+                            <constraint firstItem="RZ9-pd-mZM" firstAttribute="centerX" secondItem="E6s-73-wgK" secondAttribute="centerX" id="fqs-gm-0hg"/>
+                            <constraint firstItem="rsb-za-afc" firstAttribute="baseline" secondItem="a0y-yb-q08" secondAttribute="baseline" id="hJE-03-JwF"/>
+                            <constraint firstItem="a0y-yb-q08" firstAttribute="leading" secondItem="rsb-za-afc" secondAttribute="trailing" constant="7" id="hqK-a4-Sxy"/>
+                            <constraint firstItem="E6s-73-wgK" firstAttribute="top" secondItem="XCl-FW-OgB" secondAttribute="bottom" constant="58" id="jWf-Rl-lum"/>
+                            <constraint firstItem="GvW-FM-3co" firstAttribute="trailing" secondItem="Weg-Uz-HAD" secondAttribute="trailing" constant="85" id="n6a-NV-eIL"/>
+                            <constraint firstItem="ysi-sP-gnR" firstAttribute="top" secondItem="gAM-hI-NOu" secondAttribute="bottom" constant="8" symbolic="YES" id="qnR-j3-O8x"/>
+                            <constraint firstItem="rsb-za-afc" firstAttribute="top" secondItem="ysi-sP-gnR" secondAttribute="bottom" constant="35" id="rNg-nM-d1I"/>
+                            <constraint firstItem="RZ9-pd-mZM" firstAttribute="top" secondItem="Weg-Uz-HAD" secondAttribute="bottom" constant="3" id="rUQ-Pc-xHg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GvW-FM-3co"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="RAE-Oj-BTH"/>
+                    <connections>
+                        <outlet property="collectionViewA" destination="ysi-sP-gnR" id="Dkm-4w-D6o"/>
+                        <outlet property="collectionViewB" destination="XCl-FW-OgB" id="bBO-Wg-sTk"/>
+                        <outlet property="endYourTurnBut2" destination="E6s-73-wgK" id="MN5-ld-A2Q"/>
+                        <outlet property="player2Title" destination="Weg-Uz-HAD" id="MeL-7R-SpP"/>
+                        <outlet property="playerNumLabel" destination="RZ9-pd-mZM" id="Oo4-hN-AuW"/>
+                        <segue destination="g7T-H6-iNu" kind="presentation" identifier="player2ToPassDevice" id="uxU-fl-wil"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KG9-rx-AeC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="-473"/>
+        </scene>
+        <!--Pass Device2 View Controller-->
+        <scene sceneID="dv8-6W-zRh">
+            <objects>
+                <viewController id="g7T-H6-iNu" customClass="PassDevice2ViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wcf-SN-CBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player Player 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kG-8v-1n6">
+                                <rect key="frame" x="94" y="226" width="227" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKn-BK-srf">
+                                <rect key="frame" x="68" y="321" width="279" height="254"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="30"/>
+                                <state key="normal" title="Tap when ready"/>
+                                <connections>
+                                    <action selector="passDevice2:" destination="g7T-H6-iNu" eventType="touchUpInside" id="tEl-Wf-1bP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pass device to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeY-y5-ZRt">
+                                <rect key="frame" x="94" y="104" width="227" height="195"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GAi-zq-RpU" firstAttribute="bottom" secondItem="FKn-BK-srf" secondAttribute="bottom" constant="287" id="7Sz-2O-OSv"/>
+                            <constraint firstItem="FKn-BK-srf" firstAttribute="top" secondItem="NeY-y5-ZRt" secondAttribute="bottom" constant="21" id="EGw-CB-xZo"/>
+                            <constraint firstItem="NeY-y5-ZRt" firstAttribute="top" secondItem="GAi-zq-RpU" secondAttribute="top" constant="61" id="EHn-9Z-0LC"/>
+                            <constraint firstItem="FKn-BK-srf" firstAttribute="centerY" secondItem="wcf-SN-CBw" secondAttribute="centerY" id="O2u-oc-J81"/>
+                            <constraint firstItem="NeY-y5-ZRt" firstAttribute="centerX" secondItem="FKn-BK-srf" secondAttribute="centerX" id="ODC-kA-19Z"/>
+                            <constraint firstItem="NeY-y5-ZRt" firstAttribute="centerX" secondItem="wcf-SN-CBw" secondAttribute="centerX" id="VkO-iU-u2a"/>
+                            <constraint firstItem="FKn-BK-srf" firstAttribute="leading" secondItem="GAi-zq-RpU" secondAttribute="leading" constant="68" id="WCX-JI-fMx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GAi-zq-RpU"/>
+                    </view>
+                    <connections>
+                        <outlet property="passDevice2But" destination="FKn-BK-srf" id="oa1-IK-8mk"/>
+                        <outlet property="passDeviceLabel2" destination="NeY-y5-ZRt" id="1vt-e5-YoL"/>
+                        <outlet property="passDeviceLabel2a" destination="0kG-8v-1n6" id="IoG-x1-bFZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="passDeviceToPlayer1" id="12L-uk-zQk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V76-N4-w97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="-473"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2di-AL-cx2"/>
+        <segue reference="12L-uk-zQk"/>
+    </inferredMetricsTieBreakers>
 </document>

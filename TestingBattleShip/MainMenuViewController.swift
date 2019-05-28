@@ -27,6 +27,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // DO any additional set up after this super load
         
         goToGameButton.layer.cornerRadius = 10
         goToGameButton.layer.borderWidth = 5
@@ -36,9 +37,11 @@ class MainMenuViewController: UIViewController {
         howToPlayButton.layer.borderWidth = 5
         howToPlayButton.layer.borderColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
         
-        mainMenuTitle.layer.backgroundColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
-        mainMenuTitle.layer.cornerRadius = 10
-        mainMenuTitle.layer.opacity = 0.8
+        //mainMenuTitle.layer.backgroundColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
+        //mainMenuTitle.layer.cornerRadius = 10
+        //mainMenuTitle.layer.opacity = 0.8
+        
+        mainMenuTitle.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1))
         
         //mainMenuTitle.layer.borderWidth = 2
         //mainMenuTitle.layer.borderColor = UIColor.white.cgColor
@@ -49,6 +52,6 @@ class MainMenuViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
       
-        // Do any additional setup after loading the view.
+        
     }
 }

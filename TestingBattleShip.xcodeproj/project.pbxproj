@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9A44CCF229B3C9E00106DE5 /* outlineExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CCE229B3C9E00106DE5 /* outlineExtension.swift */; };
+		D9A44CD1229C9AAD00106DE5 /* PlayerTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */; };
+		D9A44CD3229C9AC700106DE5 /* PassDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */; };
+		D9A44CD5229DBE2000106DE5 /* PassDevice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */; };
 		D9CE83302293879100B5D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE832F2293879100B5D38C /* AppDelegate.swift */; };
 		D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE83312293879100B5D38C /* PlayerOneViewController.swift */; };
 		D9CE83352293879100B5D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CE83332293879100B5D38C /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9A44CCE229B3C9E00106DE5 /* outlineExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outlineExtension.swift; sourceTree = "<group>"; };
+		D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTwoViewController.swift; sourceTree = "<group>"; };
+		D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceViewController.swift; sourceTree = "<group>"; };
+		D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDevice2ViewController.swift; sourceTree = "<group>"; };
 		D9CE832C2293879100B5D38C /* TestingBattleShip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingBattleShip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CE832F2293879100B5D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9CE83312293879100B5D38C /* PlayerOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOneViewController.swift; sourceTree = "<group>"; };
@@ -59,9 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				D9CE832F2293879100B5D38C /* AppDelegate.swift */,
+				D9A44CCE229B3C9E00106DE5 /* outlineExtension.swift */,
 				D9CE834122949D5F00B5D38C /* BattleShip.swift */,
 				D9CE83452295B03C00B5D38C /* MainMenuViewController.swift */,
 				D9CE83312293879100B5D38C /* PlayerOneViewController.swift */,
+				D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */,
+				D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */,
+				D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */,
 				D9CE83332293879100B5D38C /* Main.storyboard */,
 				D9CE83362293879400B5D38C /* Assets.xcassets */,
 				D9CE83382293879400B5D38C /* LaunchScreen.storyboard */,
@@ -141,9 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A44CD3229C9AC700106DE5 /* PassDeviceViewController.swift in Sources */,
 				D9CE83462295B03C00B5D38C /* MainMenuViewController.swift in Sources */,
+				D9A44CD5229DBE2000106DE5 /* PassDevice2ViewController.swift in Sources */,
 				D9CE834222949D5F00B5D38C /* BattleShip.swift in Sources */,
+				D9A44CD1229C9AAD00106DE5 /* PlayerTwoViewController.swift in Sources */,
 				D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */,
+				D9A44CCF229B3C9E00106DE5 /* outlineExtension.swift in Sources */,
 				D9CE83302293879100B5D38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

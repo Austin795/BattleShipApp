@@ -8,21 +8,24 @@
 
 import UIKit
 
-class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
     @IBOutlet weak var collectionViewA: UICollectionView!
+    
     @IBOutlet weak var collectionViewB: UICollectionView!
     
-    @IBOutlet weak var endYourTurnBut: UIButton!
-    @IBOutlet weak var mainMenuBack: UIButton!
-    
-    @IBOutlet weak var player1Title: UILabel!
+    @IBOutlet weak var endYourTurnBut2: UIButton!
+   
+    @IBOutlet weak var player2Title: UILabel!
     
     let collectionViewAIdentifier = "CollectionViewACell"
     let collectionViewBIdentifier = "CollectionViewBCell"
     
     
+    
+    
     let items1 = BattleShip.battleMapPlayer1
-   
+    
     let items2 = BattleShip.battleMapPlayer2
     
     @IBOutlet weak var playerNumLabel: UILabel!
@@ -42,11 +45,11 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
         
         
-        endYourTurnBut.layer.cornerRadius = 10
-        endYourTurnBut.layer.borderWidth = 5
-        endYourTurnBut.layer.borderColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
+        endYourTurnBut2.layer.cornerRadius = 10
+        endYourTurnBut2.layer.borderWidth = 5
+        endYourTurnBut2.layer.borderColor = UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1).cgColor
         
-        player1Title.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1))
+        player2Title.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1))
         //playerNumLabel.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.white)
         
         
@@ -57,8 +60,9 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         self.performSegue(withIdentifier: "player1ToMainMenu", sender: self)
     }
     
-    @IBAction func toPassDevice1(_ sender: Any) {
-        self.performSegue(withIdentifier: "player1ToPassDevice", sender: self)
+   
+    @IBAction func passDevice2(_ sender: Any) {
+        performSegue(withIdentifier: "player2ToPassDevice", sender: self)
     }
     
     
@@ -69,13 +73,13 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             
             let cellAtInt = BattleShip.battleMapPlayer1.getCellAt(BattleMapAt: indexPath.item)
             let resultA = BattleShip.battleMapPlayer1.checkIfHitOrMiss(Cell: cellAtInt)
-         
+            
             if ( resultA ) {
                 cellA.backgroundColor = UIColor.red
             }
             
             //let oceanBackground: UIImage! = UIImage(named: "Image")
-           
+            
             self.collectionViewA.layer.borderWidth = 1.0
             self.collectionViewA.layer.borderColor = UIColor.black.cgColor
             self.collectionViewA.backgroundColor = UIColor.darkGray
@@ -91,9 +95,9 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             
             //show or hide ships in enemy map
             //if ( resultB ) {
-             //   cellB.backgroundColor = UIColor.red
+            //   cellB.backgroundColor = UIColor.red
             //}
-
+            
             return cellB
         }
         
@@ -120,7 +124,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         if collectionView == self.collectionViewA {
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
- 
+                
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
             }
@@ -137,7 +141,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             
             print(indexPath.item)
         }
-      
+        
     }
-
+    
 }
