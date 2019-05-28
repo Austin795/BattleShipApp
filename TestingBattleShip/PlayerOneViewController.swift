@@ -21,9 +21,9 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     let collectionViewBIdentifier = "CollectionViewBCell"
     
     
-    let items1 = BattleShip.battleMapPlayer1
+    var items1 = BattleShip.battleMapPlayer1
    
-    let items2 = BattleShip.battleMapPlayer2
+    var items2 = BattleShip.battleMapPlayer2
     
     @IBOutlet weak var playerNumLabel: UILabel!
     
@@ -55,6 +55,11 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBAction func backToMenu(_ sender: Any) {
         self.performSegue(withIdentifier: "player1ToMainMenu", sender: self)
+        //wipe / make new maps when clicked
+        // make button that has a load previous game
+        // another button that if clicks byPass
+        // or idk, this is design decision, both are easy to make happen.. I don't think we need it really
+        
     }
     
     @IBAction func toPassDevice1(_ sender: Any) {
@@ -62,7 +67,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { // load collectionview first display
         
         if (collectionView == self.collectionViewA) {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as UICollectionViewCell
@@ -70,15 +75,13 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             let cellAtInt = BattleShip.battleMapPlayer1.getCellAt(BattleMapAt: indexPath.item)
             let resultA = BattleShip.battleMapPlayer1.checkIfHitOrMiss(Cell: cellAtInt)
          
-            if ( resultA ) {
+            if (resultA) {
                 cellA.backgroundColor = UIColor.red
             }
-            
-            //let oceanBackground: UIImage! = UIImage(named: "Image")
            
             self.collectionViewA.layer.borderWidth = 1.0
             self.collectionViewA.layer.borderColor = UIColor.black.cgColor
-            self.collectionViewA.backgroundColor = UIColor.darkGray
+            //self.collectionViewA.backgroundColor = UIColor.darkGray
             collectionViewA.layer.opacity = 0.8
             
             return cellA
@@ -87,18 +90,25 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewBIdentifier, for: indexPath) as UICollectionViewCell
             let cellAtInt = BattleShip.battleMapPlayer2.getCellAt(BattleMapAt: indexPath.item)
-            let resultB = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
+            
+            
+            let resultB = cellAtInt.userClicked
             
             //show or hide ships in enemy map
-            //if ( resultB ) {
-             //   cellB.backgroundColor = UIColor.red
-            //}
-
+            if resultB {
+                if ( BattleShip.battleMapPlayer2.getCellAt(BattleMapAt: indexPath.item).Ship ) {
+                    cellB.backgroundColor = UIColor.red
+                } else {
+                    cellB.backgroundColor = UIColor.white
+                }
+            }
+            
+            self.collectionViewA.layer.borderWidth = 1.0
+            self.collectionViewA.layer.borderColor = UIColor.black.cgColor
+            //self.collectionViewA.backgroundColor = UIColor.darkGray
+            
             return cellB
         }
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -107,6 +117,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         }
         
         return BattleShip.battleMapPlayer2.battleMapP1.count // Replace with count of your data for collectionViewB
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { // if cell clicked
@@ -117,23 +128,26 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let result = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
         
-        if collectionView == self.collectionViewA {
+        if collectionView == self.collectionViewB {
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
+                BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
  
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
+                BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
             }
             
-            print(indexPath.item)
+            print(indexPath.item, cellAtInt.MissOrHit, cellAtInt.userClicked)
+            
             
         } else {
-            if result {
+            /* if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
-            }
+            }*/
             
             print(indexPath.item)
         }

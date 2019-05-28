@@ -12,7 +12,7 @@ import Foundation
 struct BattleShipCell {
     //stored Properties
     var Ship: Bool = false
-    
+    var userClicked: Bool = false
     var MissOrHit: String {
         if (Ship) {
             return "Hit"
@@ -64,25 +64,25 @@ class BattleShip {
                     
                     if (boatSelector == 0) {
                         for _ in 1...patrolBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 1) {
                         for _ in 1...destoryerBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 2) {
                         for _ in 1...battleshipBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 3) {
                         for _ in 0...battleshipBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
@@ -91,7 +91,7 @@ class BattleShip {
                     }
                     j = 0
                 } else {
-                    battleMapP1.append(BattleShipCell(Ship: false))
+                    battleMapP1.append(BattleShipCell(Ship: false, userClicked: false))
                     j += 1
                 }
 
@@ -108,25 +108,25 @@ class BattleShip {
                     
                     if (boatSelector == 0) {
                         for _ in 1...patrolBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 1) {
                         for _ in 1...destoryerBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 2) {
                         for _ in 1...battleshipBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 3) {
                         for _ in 0...battleshipBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true))
+                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
                         timesThough += 1
@@ -135,7 +135,7 @@ class BattleShip {
                     }
                     j = 0
                 } else {
-                    battleMapP1.append(BattleShipCell(Ship: false))
+                    battleMapP1.append(BattleShipCell(Ship: false, userClicked: false))
                     j += 1
                 }
                 
@@ -152,6 +152,19 @@ class BattleShip {
         }
         
     }
+    
+    func setHit(BattleMapAt: Int)  {
+         battleMapP1[BattleMapAt].Ship = true
+    }
+    
+    func setMiss(BattleMapAt: Int)  {
+        battleMapP1[BattleMapAt].Ship = false
+    }
+    
+    func setUserClicked(BattleMapAt: Int) {
+        battleMapP1[BattleMapAt].userClicked = true
+    }
+    
     
     func getCellAt(BattleMapAt: Int) -> BattleShipCell {
         

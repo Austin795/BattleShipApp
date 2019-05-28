@@ -68,8 +68,8 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if (collectionView == self.collectionViewA) {
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as UICollectionViewCell
+        if (collectionView == self.collectionViewB) {
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewBIdentifier, for: indexPath) as UICollectionViewCell
             
             let cellAtInt = BattleShip.battleMapPlayer1.getCellAt(BattleMapAt: indexPath.item)
             let resultA = BattleShip.battleMapPlayer1.checkIfHitOrMiss(Cell: cellAtInt)
@@ -80,23 +80,23 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
             
             //let oceanBackground: UIImage! = UIImage(named: "Image")
             
-            self.collectionViewA.layer.borderWidth = 1.0
-            self.collectionViewA.layer.borderColor = UIColor.black.cgColor
-            self.collectionViewA.backgroundColor = UIColor.darkGray
-            collectionViewA.layer.opacity = 0.8
+            self.collectionViewB.layer.borderWidth = 1.0
+            self.collectionViewB.layer.borderColor = UIColor.black.cgColor
+            //self.collectionViewB.backgroundColor = UIColor.darkGray
+            collectionViewB.layer.opacity = 0.8
             
             return cellA
             
             
         } else {
-            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewBIdentifier, for: indexPath) as UICollectionViewCell
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as UICollectionViewCell
             let cellAtInt = BattleShip.battleMapPlayer2.getCellAt(BattleMapAt: indexPath.item)
             let resultB = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
             
             //show or hide ships in enemy map
-            //if ( resultB ) {
-            //   cellB.backgroundColor = UIColor.red
-            //}
+            if ( resultB ) {
+               cellB.backgroundColor = UIColor.red
+            }
             
             return cellB
         }
@@ -121,7 +121,7 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let result = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
         
-        if collectionView == self.collectionViewA {
+        if collectionView == self.collectionViewB {
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 
@@ -132,12 +132,12 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
             print(indexPath.item)
             
         } else {
-            if result {
+            /* if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
-            }
+            } */
             
             print(indexPath.item)
         }
