@@ -47,7 +47,7 @@ class BattleShip {
         boatArr = [patrolBoat, destoryerBoat, battleshipBoat, aircraftBoat]
         
         var boatSelector: Int = 0
-        var boatSelected: ship
+        //var boatSelected: ship
         var timesThough: Int = 0
         
         //let ranNumPlacer = Int.random(in: 7...10)
@@ -60,7 +60,7 @@ class BattleShip {
             for _ in 1...71 {
                 if (j == ranNumMatcher && boatSelector < 4) {
                     
-                    boatSelected = boatArr[boatSelector]
+                    //boatSelected = boatArr[boatSelector]
                     
                     if (boatSelector == 0) {
                         for _ in 1...patrolBoat.shipSize {
@@ -104,7 +104,7 @@ class BattleShip {
             for _ in 1...71 {
                 if (j == 9 && boatSelector < 4) {
                     
-                    boatSelected = boatArr[boatSelector]
+                    //boatSelected = boatArr[boatSelector]
                     
                     if (boatSelector == 0) {
                         for _ in 1...patrolBoat.shipSize {

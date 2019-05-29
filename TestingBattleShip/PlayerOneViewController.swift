@@ -20,6 +20,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     let collectionViewAIdentifier = "CollectionViewACell"
     let collectionViewBIdentifier = "CollectionViewBCell"
     
+    var madeMove: Bool = false
     
     var items1 = BattleShip.battleMapPlayer1
    
@@ -49,7 +50,11 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         player1Title.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1))
         //playerNumLabel.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.white)
         
+        self.collectionViewA.layer.borderWidth = 1.0
+        self.collectionViewA.layer.borderColor = UIColor.black.cgColor
         
+        self.collectionViewB.layer.borderWidth = 1.0
+        self.collectionViewB.layer.borderColor = UIColor.black.cgColor
         
     }
     
@@ -77,12 +82,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             if (resultA) {
                 cellA.backgroundColor = UIColor.red
             }
-           
-            self.collectionViewA.layer.borderWidth = 1.0
-            self.collectionViewA.layer.borderColor = UIColor.black.cgColor
-            //self.collectionViewA.backgroundColor = UIColor.darkGray
-            self.collectionViewA.layer.opacity = 0.8
-            
+          
             return cellA
             
             
@@ -102,9 +102,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
                 }
             }
             
-            self.collectionViewA.layer.borderWidth = 1.0
-            self.collectionViewA.layer.borderColor = UIColor.black.cgColor
-            //self.collectionViewA.backgroundColor = UIColor.darkGray
+            
             
             return cellB
         }
@@ -127,27 +125,26 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let result = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
         
+        
+        
         if collectionView == self.collectionViewB {
+            
+            while(!madeMove) {
+            
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
- 
-            } else {
-                selectedCell.contentView.backgroundColor = UIColor.white
-                BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
-            }
-            
-            print(indexPath.item, cellAtInt.MissOrHit, cellAtInt.userClicked)
-            
-            
-        } else {
-            /* if result {
-                selectedCell.contentView.backgroundColor = UIColor.red
                 
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
-            }*/
+                BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
+                
+            }
+            madeMove = true
+            print(indexPath.item, cellAtInt.MissOrHit, cellAtInt.userClicked)
             
+            }
+        } else {
             print(indexPath.item)
         }
       

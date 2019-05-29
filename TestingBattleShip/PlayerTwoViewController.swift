@@ -21,8 +21,7 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
     let collectionViewAIdentifier = "CollectionViewACell"
     let collectionViewBIdentifier = "CollectionViewBCell"
     
-    
-    
+    var madeMove: Bool = false
     
     let items1 = BattleShip.battleMapPlayer1
     
@@ -52,6 +51,12 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
         player2Title.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.init(red: 0.2, green: 0.5, blue: 0.8, alpha: 1))
         //playerNumLabel.makeOutLine(oulineColor: UIColor.black, foregroundColor: UIColor.white)
         
+        self.collectionViewA.layer.borderWidth = 1.0
+        self.collectionViewA.layer.borderColor = UIColor.black.cgColor
+        
+        self.collectionViewB.layer.borderWidth = 1.0
+        self.collectionViewB.layer.borderColor = UIColor.black.cgColor
+        
         
         
     }
@@ -78,12 +83,7 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
                 cellA.backgroundColor = UIColor.red
             }
             
-            //let oceanBackground: UIImage! = UIImage(named: "Image")
             
-           // self.collectionViewB.layer.borderWidth = 1.0
-          //  self.collectionViewB.layer.borderColor = UIColor.black.cgColor
-            //self.collectionViewB.backgroundColor = UIColor.darkGray
-         //   collectionViewB.layer.opacity = 0.8
             
             return cellA
             
@@ -129,6 +129,9 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
         let result = BattleShip.battleMapPlayer1.checkIfHitOrMiss(Cell: cellAtInt)
         
         if collectionView == self.collectionViewB {
+            
+            while(!madeMove) {
+                
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 BattleShip.battleMapPlayer1.setUserClicked(BattleMapAt: indexPath.item)
@@ -137,9 +140,10 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
                 BattleShip.battleMapPlayer1.setUserClicked(BattleMapAt: indexPath.item)
             }
             
+            madeMove = true
             print(indexPath.item, cellAtInt.MissOrHit, cellAtInt.userClicked)
             
-            
+            }
         } else {
             /* if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
