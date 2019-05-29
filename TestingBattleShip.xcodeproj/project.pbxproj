@@ -11,6 +11,7 @@
 		D9A44CD1229C9AAD00106DE5 /* PlayerTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */; };
 		D9A44CD3229C9AC700106DE5 /* PassDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */; };
 		D9A44CD5229DBE2000106DE5 /* PassDevice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */; };
+		D9A44CD9229EF18A00106DE5 /* SonarSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A44CD8229EF18A00106DE5 /* SonarSound.mp3 */; };
 		D9CE83302293879100B5D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE832F2293879100B5D38C /* AppDelegate.swift */; };
 		D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE83312293879100B5D38C /* PlayerOneViewController.swift */; };
 		D9CE83352293879100B5D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CE83332293879100B5D38C /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTwoViewController.swift; sourceTree = "<group>"; };
 		D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceViewController.swift; sourceTree = "<group>"; };
 		D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDevice2ViewController.swift; sourceTree = "<group>"; };
+		D9A44CD8229EF18A00106DE5 /* SonarSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SonarSound.mp3; sourceTree = "<group>"; };
 		D9CE832C2293879100B5D38C /* TestingBattleShip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingBattleShip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CE832F2293879100B5D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9CE83312293879100B5D38C /* PlayerOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOneViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */,
 				D9CE83332293879100B5D38C /* Main.storyboard */,
 				D9CE83362293879400B5D38C /* Assets.xcassets */,
+				D9A44CD8229EF18A00106DE5 /* SonarSound.mp3 */,
 				D9CE83382293879400B5D38C /* LaunchScreen.storyboard */,
 				D9CE833B2293879400B5D38C /* Info.plist */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A44CD9229EF18A00106DE5 /* SonarSound.mp3 in Resources */,
 				D9CE833A2293879400B5D38C /* LaunchScreen.storyboard in Resources */,
 				D9CE83372293879400B5D38C /* Assets.xcassets in Resources */,
 				D9CE83352293879100B5D38C /* Main.storyboard in Resources */,

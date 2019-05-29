@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainMenuViewController: UIViewController {
+    
+    var AudioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var mainMenuTitle: UILabel!
     
@@ -52,6 +55,16 @@ class MainMenuViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
       
+    
         
+        let AssortedMusic = NSURL(fileURLWithPath: Bundle.main.path(forResource: "SonarSound", ofType: "mp3")!)
+        
+        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusic as URL)
+        
+        AudioPlayer.prepareToPlay()
+        
+        AudioPlayer.numberOfLoops = -1
+        
+        AudioPlayer.play()
     }
 }

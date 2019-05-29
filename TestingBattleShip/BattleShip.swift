@@ -49,17 +49,14 @@ class BattleShip {
         var boatSelector: Int = 0
         //var boatSelected: ship
         var timesThough: Int = 0
-        
         //let ranNumPlacer = Int.random(in: 7...10)
-        let ranNumMatcher = Int.random(in: 7...10)
-        
+        let ranNumMatcher = Int.random(in: 3...10)
         
         if buildMap && PlayerNum == 1 { // player 1 Algo start
             var j:Int = 0
             //battleMapP1.append(BattleShipCell(Ship: true))
             for _ in 1...71 {
                 if (j == ranNumMatcher && boatSelector < 4) {
-                    
                     //boatSelected = boatArr[boatSelector]
                     
                     if (boatSelector == 0) {
