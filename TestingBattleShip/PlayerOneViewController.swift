@@ -58,7 +58,6 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         //wipe / make new maps when clicked
         // make button that has a load previous game
         // another button that if clicks byPass
-        // or idk, this is design decision, both are easy to make happen.. I don't think we need it really
         
     }
     
@@ -82,7 +81,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             self.collectionViewA.layer.borderWidth = 1.0
             self.collectionViewA.layer.borderColor = UIColor.black.cgColor
             //self.collectionViewA.backgroundColor = UIColor.darkGray
-            collectionViewA.layer.opacity = 0.8
+            self.collectionViewA.layer.opacity = 0.8
             
             return cellA
             

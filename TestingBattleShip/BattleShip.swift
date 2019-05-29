@@ -165,6 +165,10 @@ class BattleShip {
         battleMapP1[BattleMapAt].userClicked = true
     }
     
+    func setUserClickedP2(BattleMapAt: Int) {
+        battleMapP2[BattleMapAt].userClicked = true
+    }
+    
     
     func getCellAt(BattleMapAt: Int) -> BattleShipCell {
         
