@@ -166,7 +166,7 @@
                         <outlet property="mainMenuBack" destination="Goc-v4-zvf" id="8e2-AA-1s9"/>
                         <outlet property="player1Title" destination="Zmg-Uj-Pae" id="fvf-iD-jwi"/>
                         <outlet property="playerNumLabel" destination="ZDD-pv-jrl" id="Q64-er-U0D"/>
-                        <segue destination="UKv-iD-HdW" kind="presentation" identifier="player1ToMainMenu" id="xA3-y9-bGK"/>
+                        <segue destination="UKv-iD-HdW" kind="presentation" identifier="player1ToMainMenu" modalTransitionStyle="flipHorizontal" id="xA3-y9-bGK"/>
                         <segue destination="J7s-40-TWp" kind="presentation" identifier="player1ToPassDevice" id="sV0-57-UsE"/>
                     </connections>
                 </viewController>
@@ -234,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="358" y="-473"/>
         </scene>
-        <!--View Controller-->
+        <!--Instructions View Controller-->
         <scene sceneID="dH2-SG-afD">
             <objects>
-                <viewController id="Uht-8D-dc8" sceneMemberID="viewController">
+                <viewController id="Uht-8D-dc8" customClass="InstructionsViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WS7-ES-5tc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,48 +254,48 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How To Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-IB-dSp">
                                 <rect key="frame" x="86" y="137" width="242" height="37"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1. Player One selects Start Game  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ey1-CK-A5z">
                                 <rect key="frame" x="85" y="196" width="240" height="74"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="rTR-aq-HOG"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="3. Player One Passes his device to Player 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-Yc-puD">
                                 <rect key="frame" x="85" y="384" width="240" height="82"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="sRP-Vl-TyT"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="4. Player 2 selects their strike location on the strike map then passes the device back to Player 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GOH-AV-0Kq">
                                 <rect key="frame" x="85" y="470" width="240" height="166"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="2. Player One selects their strike  location on the strike map" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-ZM-1SS">
                                 <rect key="frame" x="87" y="278" width="240" height="98"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="ifl-2M-dhK"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="5. Repeat 1 - 4 until Winner " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zxG-OB-Swz">
                                 <rect key="frame" x="85" y="644" width="240" height="74"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="eHk-mZ-Fzd"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -307,6 +307,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backToMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwh-1I-KHu"/>
+                                    <action selector="backToMenu:" destination="Uht-8D-dc8" eventType="touchUpInside" id="uhk-xL-vsC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -340,6 +341,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cub-i1-Iqb"/>
                     </view>
+                    <connections>
+                        <outlet property="instructionTitle" destination="k18-4Z-M4b" id="Vlt-vr-ZtP"/>
+                        <segue destination="UKv-iD-HdW" kind="presentation" identifier="howToMainMenu" modalTransitionStyle="flipHorizontal" id="IIc-Oa-vmF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgu-DG-xaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,7 +413,7 @@
                         <outlet property="howToPlayButton" destination="8uV-f1-afC" id="hCJ-lm-ZQ9"/>
                         <outlet property="mainMenuTitle" destination="eEn-vo-qdg" id="eVI-vJ-3uq"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainMenuSegue" modalTransitionStyle="flipHorizontal" id="SPm-pK-WSK"/>
-                        <segue destination="Uht-8D-dc8" kind="presentation" identifier="howToPlaySegue" id="v9W-SX-Y9u"/>
+                        <segue destination="Uht-8D-dc8" kind="presentation" identifier="howToPlaySegue" modalTransitionStyle="flipHorizontal" id="v9W-SX-Y9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0a8-ic-yXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -528,7 +533,7 @@
                                     <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backToMenu:" destination="byz-3z-lo5" eventType="touchUpInside" id="yFW-Aa-SNf"/>
+                                    <action selector="backToMenu:" destination="byz-3z-lo5" eventType="touchUpInside" id="LzF-6h-8EP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -568,9 +573,11 @@
                         <outlet property="collectionViewA" destination="ysi-sP-gnR" id="Dkm-4w-D6o"/>
                         <outlet property="collectionViewB" destination="XCl-FW-OgB" id="bBO-Wg-sTk"/>
                         <outlet property="endYourTurnBut2" destination="E6s-73-wgK" id="MN5-ld-A2Q"/>
+                        <outlet property="mainMenuBut2" destination="Gjy-Kx-lHy" id="tp4-FH-UJ7"/>
                         <outlet property="player2Title" destination="Weg-Uz-HAD" id="MeL-7R-SpP"/>
                         <outlet property="playerNumLabel" destination="RZ9-pd-mZM" id="Oo4-hN-AuW"/>
                         <segue destination="g7T-H6-iNu" kind="presentation" identifier="player2ToPassDevice" id="uxU-fl-wil"/>
+                        <segue destination="UKv-iD-HdW" kind="presentation" identifier="player2ToMainMenu" modalTransitionStyle="flipHorizontal" id="z8x-Nf-aW9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KG9-rx-AeC" sceneMemberID="firstResponder"/>
@@ -639,6 +646,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="12L-uk-zQk"/>
+        <segue reference="IIc-Oa-vmF"/>
+        <segue reference="SPm-pK-WSK"/>
     </inferredMetricsTieBreakers>
 </document>

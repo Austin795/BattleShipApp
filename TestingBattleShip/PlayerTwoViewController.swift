@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var AudioPlayerMiss = AVAudioPlayer()
+    var AudioPlayerHit = AVAudioPlayer()
 
     @IBOutlet weak var collectionViewA: UICollectionView!
     
     @IBOutlet weak var collectionViewB: UICollectionView!
     
+    @IBOutlet weak var mainMenuBut2: NSLayoutConstraint!
     @IBOutlet weak var endYourTurnBut2: UIButton!
    
     @IBOutlet weak var player2Title: UILabel!
@@ -24,7 +29,6 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
     var madeMove: Bool = false
     
     let items1 = BattleShip.battleMapPlayer1
-    
     let items2 = BattleShip.battleMapPlayer2
     
     @IBOutlet weak var playerNumLabel: UILabel!
@@ -57,18 +61,34 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
         self.collectionViewB.layer.borderWidth = 1.0
         self.collectionViewB.layer.borderColor = UIColor.black.cgColor
         
+        let AssortedMusicMiss = NSURL(fileURLWithPath: Bundle.main.path(forResource: "MissSplash", ofType: "mp3")!)
+        
+        AudioPlayerMiss = try! AVAudioPlayer(contentsOf: AssortedMusicMiss as URL)
+        
+        AudioPlayerMiss.prepareToPlay()
+        
+        let AssortedMusicHit = NSURL(fileURLWithPath: Bundle.main.path(forResource: "HitCannon", ofType: "mp3")!)
+        
+        AudioPlayerHit = try! AVAudioPlayer(contentsOf: AssortedMusicHit as URL)
+        
+        AudioPlayerHit.prepareToPlay()
+        
+        
         
         
     }
     
-    @IBAction func backToMenu(_ sender: Any) {
-        self.performSegue(withIdentifier: "player1ToMainMenu", sender: self)
+    
+    @IBAction func backToMenu(_ sender: UIButton) {
+        performSegue(withIdentifier: "player2ToMainMenu", sender: self)
     }
     
    
     @IBAction func passDevice2(_ sender: Any) {
         performSegue(withIdentifier: "player2ToPassDevice", sender: self)
     }
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,7 +100,7 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
             let resultA = BattleShip.battleMapPlayer2.checkIfHitOrMiss(Cell: cellAtInt)
             
             if ( resultA ) {
-                cellA.backgroundColor = UIColor.red
+                cellA.backgroundColor = UIColor.lightGray
             }
             
             
@@ -135,9 +155,13 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
             if result {
                 selectedCell.contentView.backgroundColor = UIColor.red
                 BattleShip.battleMapPlayer1.setUserClicked(BattleMapAt: indexPath.item)
+                AudioPlayerHit.play()
+            
+                
             } else {
                 selectedCell.contentView.backgroundColor = UIColor.white
                 BattleShip.battleMapPlayer1.setUserClicked(BattleMapAt: indexPath.item)
+                AudioPlayerMiss.play()
             }
             
             madeMove = true

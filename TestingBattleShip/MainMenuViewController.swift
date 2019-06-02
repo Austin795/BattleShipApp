@@ -18,9 +18,12 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var goToGameButton: UIButton!
 
     @IBOutlet weak var howToPlayButton: UIButton!
+    
     @IBAction func goToGame(_ sender: UIButton) {
         
         self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
+        
+        AudioPlayer.stop()
         
     }
     
@@ -65,6 +68,6 @@ class MainMenuViewController: UIViewController {
         
         AudioPlayer.numberOfLoops = -1
         
-        AudioPlayer.play()
+       // AudioPlayer.play()
     }
 }

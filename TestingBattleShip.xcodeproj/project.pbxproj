@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9986B3822A1E3A80033B5BE /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9986B3722A1E3A80033B5BE /* InstructionsViewController.swift */; };
+		D9986B3A22A2FE890033B5BE /* MissSplash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9986B3922A2FE890033B5BE /* MissSplash.mp3 */; };
+		D9986B3C22A2FE8E0033B5BE /* HitCannon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9986B3B22A2FE8E0033B5BE /* HitCannon.mp3 */; };
 		D9A44CCF229B3C9E00106DE5 /* outlineExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CCE229B3C9E00106DE5 /* outlineExtension.swift */; };
 		D9A44CD1229C9AAD00106DE5 /* PlayerTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */; };
 		D9A44CD3229C9AC700106DE5 /* PassDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9986B3722A1E3A80033B5BE /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D9986B3922A2FE890033B5BE /* MissSplash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MissSplash.mp3; sourceTree = "<group>"; };
+		D9986B3B22A2FE8E0033B5BE /* HitCannon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HitCannon.mp3; sourceTree = "<group>"; };
 		D9A44CCE229B3C9E00106DE5 /* outlineExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outlineExtension.swift; sourceTree = "<group>"; };
 		D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTwoViewController.swift; sourceTree = "<group>"; };
 		D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceViewController.swift; sourceTree = "<group>"; };
@@ -75,10 +81,13 @@
 				D9CE83312293879100B5D38C /* PlayerOneViewController.swift */,
 				D9A44CD0229C9AAD00106DE5 /* PlayerTwoViewController.swift */,
 				D9A44CD2229C9AC700106DE5 /* PassDeviceViewController.swift */,
+				D9986B3722A1E3A80033B5BE /* InstructionsViewController.swift */,
 				D9A44CD4229DBE2000106DE5 /* PassDevice2ViewController.swift */,
 				D9CE83332293879100B5D38C /* Main.storyboard */,
 				D9CE83362293879400B5D38C /* Assets.xcassets */,
 				D9A44CD8229EF18A00106DE5 /* SonarSound.mp3 */,
+				D9986B3922A2FE890033B5BE /* MissSplash.mp3 */,
+				D9986B3B22A2FE8E0033B5BE /* HitCannon.mp3 */,
 				D9CE83382293879400B5D38C /* LaunchScreen.storyboard */,
 				D9CE833B2293879400B5D38C /* Info.plist */,
 			);
@@ -144,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A44CD9229EF18A00106DE5 /* SonarSound.mp3 in Resources */,
+				D9986B3C22A2FE8E0033B5BE /* HitCannon.mp3 in Resources */,
 				D9CE833A2293879400B5D38C /* LaunchScreen.storyboard in Resources */,
 				D9CE83372293879400B5D38C /* Assets.xcassets in Resources */,
+				D9986B3A22A2FE890033B5BE /* MissSplash.mp3 in Resources */,
 				D9CE83352293879100B5D38C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +171,7 @@
 				D9A44CD3229C9AC700106DE5 /* PassDeviceViewController.swift in Sources */,
 				D9CE83462295B03C00B5D38C /* MainMenuViewController.swift in Sources */,
 				D9A44CD5229DBE2000106DE5 /* PassDevice2ViewController.swift in Sources */,
+				D9986B3822A1E3A80033B5BE /* InstructionsViewController.swift in Sources */,
 				D9CE834222949D5F00B5D38C /* BattleShip.swift in Sources */,
 				D9A44CD1229C9AAD00106DE5 /* PlayerTwoViewController.swift in Sources */,
 				D9CE83322293879100B5D38C /* PlayerOneViewController.swift in Sources */,
@@ -311,7 +323,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N3XCT3453;
 				INFOPLIST_FILE = TestingBattleShip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,7 +342,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5N3XCT3453;
 				INFOPLIST_FILE = TestingBattleShip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

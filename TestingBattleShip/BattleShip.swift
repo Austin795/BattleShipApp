@@ -50,27 +50,54 @@ class BattleShip {
         //var boatSelected: ship
         var timesThough: Int = 0
         //let ranNumPlacer = Int.random(in: 7...10)
-        let ranNumMatcher = Int.random(in: 3...10)
+        let ranNumMatcher = Int.random(in: 3...10) // cellsBetweenPlacedShips
         
         if buildMap && PlayerNum == 1 { // player 1 Algo start
             var j:Int = 0
             //battleMapP1.append(BattleShipCell(Ship: true))
-            for _ in 1...71 {
+            for mapCell in 1...71 {
                 if (j == ranNumMatcher && boatSelector < 4) {
                     //boatSelected = boatArr[boatSelector]
-                    
                     if (boatSelector == 0) {
-                        for _ in 1...patrolBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                        if (j == 8 || j == 17) {
+                            battleMapP1.append(BattleShipCell(Ship: false, userClicked: false))
+                            for _ in 1...patrolBoat.shipSize {
+                                battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                            }
+                        } else {
+                            for _ in 1...patrolBoat.shipSize {
+                                battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                            }
                         }
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 1) {
-                        for _ in 1...destoryerBoat.shipSize {
-                            battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                        if (mapCell == 16) {
+                            battleMapP1.append(BattleShipCell(Ship: false, userClicked: false))
+                            battleMapP1.append(BattleShipCell(Ship: false, userClicked: false))
+                            for _ in 1...destoryerBoat.shipSize {
+                                battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                                //battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                            }
+                            boatSelector += 1
+                            timesThough += 1
+                        /*} else if ( mapCell == 17) {
+                            var counter1 = mapCell
+                            for _ in 1...destoryerBoat.shipSize {
+                                counter1 += 1
+                                battleMapP1.insert(BattleShipCell(Ship: true, userClicked: false), at: counter1)
+                                //battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                            }
+                            boatSelector += 1
+                            timesThough += 1*/
+                        } else {
+                            for _ in 1...destoryerBoat.shipSize {
+                                battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
+                            }
+                            boatSelector += 1
+                            timesThough += 1
                         }
-                        boatSelector += 1
-                        timesThough += 1
+                        
                     } else if (boatSelector == 2) {
                         for _ in 1...battleshipBoat.shipSize {
                             battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
@@ -78,7 +105,7 @@ class BattleShip {
                         boatSelector += 1
                         timesThough += 1
                     } else if (boatSelector == 3) {
-                        for _ in 0...battleshipBoat.shipSize {
+                        for _ in 1...aircraftBoat.shipSize {
                             battleMapP1.append(BattleShipCell(Ship: true, userClicked: false))
                         }
                         boatSelector += 1
@@ -99,7 +126,7 @@ class BattleShip {
             var j:Int = 0
             //battleMapP1.append(BattleShipCell(Ship: true))
             for _ in 1...71 {
-                if (j == 9 && boatSelector < 4) {
+                if (j == ranNumMatcher && boatSelector < 4) {
                     
                     //boatSelected = boatArr[boatSelector]
                     
@@ -141,13 +168,11 @@ class BattleShip {
     }
     
     func checkIfHitOrMiss(Cell: BattleShipCell) -> Bool {
-        
-        if (Cell.Ship) {
+        if Cell.Ship {
             return true;
         } else {
             return false;
         }
-        
     }
     
     func setHit(BattleMapAt: Int)  {
@@ -163,15 +188,19 @@ class BattleShip {
     }
     
     func setUserClickedP2(BattleMapAt: Int) {
-        battleMapP2[BattleMapAt].userClicked = true
+       battleMapP2[BattleMapAt].userClicked = true
+   }
+    
+    func getUserClicked(Cell: BattleShipCell) -> Bool {
+        if Cell.userClicked {
+            return true
+        } else {
+            return false
+        }
     }
     
-    
     func getCellAt(BattleMapAt: Int) -> BattleShipCell {
-        
         return battleMapP1[BattleMapAt]
-        
-        
     }
     
     
