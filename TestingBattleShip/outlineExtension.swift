@@ -12,17 +12,13 @@
 /*
  * This code snippet is from a tutorial I found online.  Link above to tutorial and source code.
  * I'm choosing to use this code because I wanted to have an outline on some text on the project
- * UIViewcontrollers.  I searched awhile in menus and online to see if there was an easier way but no luck.
+ * UIViewcontrollers so it was readable aganist a blue background.  I searched awhile in menus and online to see if there was an easier way but no luck.
  * This is the only method of making an outline on text in swift I found so I used it.
  * If there is a menu option or easier way to do it just comment it in here.
  * You can use it just by saying labelName.makeOutLine
  *
  *
  */
- 
- 
- 
- 
 
 import UIKit
 
@@ -37,12 +33,6 @@ extension UILabel {
             ] as [NSAttributedString.Key : Any]
         self.attributedText = NSMutableAttributedString(string: self.text ?? "", attributes: strokeTextAttributes)
     }
-    
-    func underline() {
-        if let textString = self.text {
-            let attributedString = NSMutableAttributedString(string: textString);   attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
-            attributedText = attributedString
-        }
-    }
 }
+
 

@@ -39,8 +39,9 @@ class BattleShip {
     let battleshipBoat = ship(shipSize: 4)
     let aircraftBoat = ship(shipSize: 5)
     
-    static let battleMapPlayer1: BattleShip = BattleShip(buildMap: true, PlayerNum: 1)
-    static let battleMapPlayer2: BattleShip = BattleShip(buildMap: true, PlayerNum: 2)
+    //shared Instances p1 and p2
+    static var battleMapPlayer1: BattleShip = BattleShip(buildMap: true, PlayerNum: 1)
+    static var battleMapPlayer2: BattleShip = BattleShip(buildMap: true, PlayerNum: 2)
     
     init(buildMap: Bool, PlayerNum: Int) {
         
@@ -121,7 +122,7 @@ class BattleShip {
 
             }
         } // if player 1 Algo end
-        
+        // player 2 algo needs to be updated to do the same stuff as player 1 algo
         if buildMap && PlayerNum == 2 { // player 2 algo start
             var j:Int = 0
             //battleMapP1.append(BattleShipCell(Ship: true))

@@ -21,6 +21,10 @@ class MainMenuViewController: UIViewController {
     
     @IBAction func goToGame(_ sender: UIButton) {
         
+        BattleShip.battleMapPlayer1 = BattleShip.init(buildMap: true, PlayerNum: 1)
+        BattleShip.battleMapPlayer2 = BattleShip.init(buildMap: true, PlayerNum: 2)
+        
+        
         self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
         
         AudioPlayer.stop()
@@ -68,6 +72,6 @@ class MainMenuViewController: UIViewController {
         
         AudioPlayer.numberOfLoops = -1
         
-       // AudioPlayer.play()
+        AudioPlayer.play()
     }
 }
