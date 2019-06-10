@@ -80,12 +80,17 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
     
     
     @IBAction func backToMenu(_ sender: UIButton) {
+        
         performSegue(withIdentifier: "player2ToMainMenu", sender: self)
     }
     
    
     @IBAction func passDevice2(_ sender: Any) {
-        performSegue(withIdentifier: "player2ToPassDevice", sender: self)
+        if(BattleShip.battleMapPlayer1.numShipTilesP1 == 0) {
+            self.performSegue(withIdentifier: "winner2", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "player2ToPassDevice", sender: self)
+        }
     }
     
     
@@ -102,9 +107,6 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
             if ( resultA ) {
                 cellA.backgroundColor = UIColor.lightGray
             }
-            
-            
-            
             return cellA
             
             
@@ -156,6 +158,8 @@ class PlayerTwoViewController: UIViewController, UICollectionViewDataSource, UIC
                 selectedCell.contentView.backgroundColor = UIColor.red
                 BattleShip.battleMapPlayer1.setUserClicked(BattleMapAt: indexPath.item)
                 AudioPlayerHit.play()
+                BattleShip.battleMapPlayer2.minus(ShipTile: BattleShip.battleMapPlayer2)
+                print(BattleShip.battleMapPlayer2.numShipTilesP2)
             
                 
             } else {

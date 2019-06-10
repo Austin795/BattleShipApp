@@ -32,6 +32,8 @@ class BattleShip {
     var battleMapP1: [BattleShipCell] = []
     var battleMapP2: [BattleShipCell] = []
     var boatArr: [ship] = []
+    var numShipTilesP1: Int = 14;
+    var numShipTilesP2: Int = 14;
     
     let landMine = ship(shipSize: 1)
     let patrolBoat = ship(shipSize: 2)
@@ -176,6 +178,8 @@ class BattleShip {
         }
     }
     
+    
+    
     func setHit(BattleMapAt: Int)  {
          battleMapP1[BattleMapAt].Ship = true
     }
@@ -203,6 +207,13 @@ class BattleShip {
     func getCellAt(BattleMapAt: Int) -> BattleShipCell {
         return battleMapP1[BattleMapAt]
     }
+    
+    func minus(ShipTile: BattleShip) {
+        BattleShip.battleMapPlayer1.numShipTilesP1 = BattleShip.battleMapPlayer1.numShipTilesP1 - 1
+    }
+    
+    
+    
     
     
 }

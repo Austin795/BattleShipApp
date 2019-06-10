@@ -13,7 +13,7 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayerOneViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayerOneViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +168,7 @@
                         <outlet property="playerNumLabel" destination="ZDD-pv-jrl" id="Q64-er-U0D"/>
                         <segue destination="UKv-iD-HdW" kind="presentation" identifier="player1ToMainMenu" modalTransitionStyle="flipHorizontal" id="xA3-y9-bGK"/>
                         <segue destination="J7s-40-TWp" kind="presentation" identifier="player1ToPassDevice" id="sV0-57-UsE"/>
+                        <segue destination="oAL-MN-G1d" kind="presentation" identifier="winner1" id="F2e-tP-K88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,7 +178,7 @@
         <!--Pass Device View Controller-->
         <scene sceneID="OXZ-qK-KfH">
             <objects>
-                <viewController id="J7s-40-TWp" customClass="PassDeviceViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J7s-40-TWp" customClass="PassDeviceViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QKg-E1-Frl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,7 +238,7 @@
         <!--Instructions View Controller-->
         <scene sceneID="dH2-SG-afD">
             <objects>
-                <viewController id="Uht-8D-dc8" customClass="InstructionsViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Uht-8D-dc8" customClass="InstructionsViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WS7-ES-5tc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,10 +351,56 @@
             </objects>
             <point key="canvasLocation" x="-446.37681159420293" y="264.50892857142856"/>
         </scene>
+        <!--Winner View Controller-->
+        <scene sceneID="qj8-sK-Mpo">
+            <objects>
+                <viewController id="oAL-MN-G1d" customClass="WinnerViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dD-zJ-dku">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Enemy Ships Sunk!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVN-wO-UPL">
+                                <rect key="frame" x="37" y="192" width="340" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq5-DB-EeW">
+                                <rect key="frame" x="76" y="276" width="263" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <color key="textColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZl-cW-XeU">
+                                <rect key="frame" x="64" y="422" width="286" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="31"/>
+                                <state key="normal" title="End Game"/>
+                                <connections>
+                                    <action selector="backtoMenuWinner:" destination="oAL-MN-G1d" eventType="touchUpInside" id="QDQ-2t-iuX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="q5K-4C-evf"/>
+                    </view>
+                    <connections>
+                        <outlet property="winButton" destination="qZl-cW-XeU" id="2tL-1s-EAB"/>
+                        <segue destination="UKv-iD-HdW" kind="presentation" identifier="backToMenuFromWin" id="Oc5-SY-dCd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nc-W1-3YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.9565217391305" y="264.50892857142856"/>
+        </scene>
         <!--MainMenuStart-->
         <scene sceneID="80F-aU-9H8">
             <objects>
-                <viewController storyboardIdentifier="MainMenuStart" title="MainMenuStart" id="UKv-iD-HdW" customClass="MainMenuViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuStart" title="MainMenuStart" id="UKv-iD-HdW" customClass="MainMenuViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYI-dP-rSC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,7 +470,7 @@
         <!--Title-->
         <scene sceneID="sOj-aH-KKP">
             <objects>
-                <viewController id="byz-3z-lo5" customClass="PlayerTwoViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="byz-3z-lo5" customClass="PlayerTwoViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qkt-5u-5fU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -578,6 +625,7 @@
                         <outlet property="playerNumLabel" destination="RZ9-pd-mZM" id="Oo4-hN-AuW"/>
                         <segue destination="g7T-H6-iNu" kind="presentation" identifier="player2ToPassDevice" id="uxU-fl-wil"/>
                         <segue destination="UKv-iD-HdW" kind="presentation" identifier="player2ToMainMenu" modalTransitionStyle="flipHorizontal" id="z8x-Nf-aW9"/>
+                        <segue destination="oAL-MN-G1d" kind="presentation" identifier="winner2" id="bpW-w2-49G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KG9-rx-AeC" sceneMemberID="firstResponder"/>
@@ -587,7 +635,7 @@
         <!--Pass Device2 View Controller-->
         <scene sceneID="dv8-6W-zRh">
             <objects>
-                <viewController id="g7T-H6-iNu" customClass="PassDevice2ViewController" customModule="TestingBattleShip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g7T-H6-iNu" customClass="PassDevice2ViewController" customModule="BattleShip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcf-SN-CBw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -646,8 +694,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2di-AL-cx2"/>
-        <segue reference="IIc-Oa-vmF"/>
+        <segue reference="Oc5-SY-dCd"/>
+        <segue reference="bpW-w2-49G"/>
         <segue reference="12L-uk-zQk"/>
     </inferredMetricsTieBreakers>
 </document>

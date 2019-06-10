@@ -73,6 +73,9 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
         
         AudioPlayerHit.prepareToPlay()
         
+        
+        
+        
     }
     
     @IBAction func backToMenu(_ sender: Any) {
@@ -84,7 +87,11 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     @IBAction func toPassDevice1(_ sender: Any) {
-        self.performSegue(withIdentifier: "player1ToPassDevice", sender: self)
+        if(BattleShip.battleMapPlayer1.numShipTilesP1 == 0) {
+            self.performSegue(withIdentifier: "winner1", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "player1ToPassDevice", sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { // load collectionview display
@@ -99,10 +106,7 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             if (resultA) {
                 cellA.backgroundColor = UIColor.lightGray
             }
-            
-         
-            
-          
+     
             return cellA
             
             
@@ -117,6 +121,8 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
             if resultB {
                 if ( BattleShip.battleMapPlayer2.getCellAt(BattleMapAt: indexPath.item).Ship ) {
                     cellB.backgroundColor = UIColor.red
+                    
+                    
                 } else {
                     cellB.backgroundColor = UIColor.white
                 }
@@ -155,7 +161,8 @@ class PlayerOneViewController: UIViewController, UICollectionViewDataSource, UIC
                 selectedCell.contentView.backgroundColor = UIColor.red
                 BattleShip.battleMapPlayer2.setUserClicked(BattleMapAt: indexPath.item)
                 AudioPlayerHit.play()
-            
+                BattleShip.battleMapPlayer1.minus(ShipTile: BattleShip.battleMapPlayer1)
+                print(BattleShip.battleMapPlayer1.numShipTilesP1)
                 
                 
             } else {
